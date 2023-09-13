@@ -116,7 +116,7 @@ class ChangePasswordAdmin(View):
 
             except Exception as e:
 
-                return render(request, "PM/change-password.html", {'form': form,'Error':'User not found'})
+                return render(request, "PM/change-password.html", {'form': form,'Error':'Please check your old password'})
         else:
             print(form.errors)
             return render(request, "PM/change-password.html", {'form': form,'Error':form.errors})
@@ -495,7 +495,7 @@ class ChangePasswordUser(View):
 
             except Exception as e:
                 print(e)
-                return render(request, "User/change-password.html", {'form': form,'Error':'User not found'})
+                return render(request, "User/change-password.html", {'form': form,'Error':'Please check your old password'})
         else:
             return render(request, "User/change-password.html", {'form': form})
 
